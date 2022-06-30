@@ -127,7 +127,7 @@
   color: #222;
   z-index: 4;
   position: absolute;
-  font-size: 15rem;
+  font-size: 13.45rem;
   animation: title 750ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
 }
 
