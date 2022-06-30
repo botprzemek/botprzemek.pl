@@ -1,0 +1,167 @@
+.background {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.screen {
+  width: 21%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  left: 40.25%;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: bottom;
+  z-index: 3;
+}
+
+.x {
+  right: 0;
+  background: linear-gradient(250deg, #6dd7ff, #56e468);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite,
+    slide 1s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.y {
+  left: 0;
+  background: linear-gradient(250deg, #ffc248, #ff3f3f);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite,
+    slide 1.2s 0.1s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.screen2 {
+  width: 2%;
+  height: 80%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform: translate(34.45vw, 0);
+  z-index: 5;
+}
+
+.slider2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: top;
+  z-index: 3;
+}
+
+.x2 {
+  right: 0;
+  background: linear-gradient(250deg, #ffc248, #ff3f3f);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite,
+    slide 1s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.y2 {
+  left: 0;
+  background: linear-gradient(250deg, #6dd7ff, #56e468);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite,
+    slide 1.2s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.lefty {
+  width: 17%;
+  height: 28%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transform: translate(14.5vw, 0);
+  z-index: 3;
+}
+
+.righty {
+  width: 25%;
+  height: 70%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-40%, 30%);
+  z-index: 3;
+}
+
+.center {
+  width: 6%;
+  height: 90%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  transform: translateY(11.1%);
+  z-index: 3;
+}
+
+.front {
+  margin: 2% 0 0 3%;
+  color: #222;
+  z-index: 4;
+  position: absolute;
+  font-size: 15rem;
+  animation: title 750ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+@keyframes slide {
+  0% {
+    display: block;
+    transform: translateY(100%);
+    transform: scaleY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+    transform: scaleY(100%);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
