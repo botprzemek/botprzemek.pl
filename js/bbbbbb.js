@@ -10,6 +10,12 @@ let h = innerHeight;
 
 // NAVBAR
 
+function operation(operation) {
+  localStorage.setItem("lastSection", operation);
+  document.getElementById("b" + operation).classList.add("active");
+  indicator.style.transform = `translateX(calc(${(operation - 1) * 90}px))`;
+}
+
 function menu() {
   allLi.forEach((li, index) => {
     li.addEventListener("click", (e) => {
@@ -49,13 +55,9 @@ function menu() {
       }
       navBar.querySelector(".active").classList.remove("active");
       if (e.deltaY < 0) {
-        localStorage.setItem("lastSection", indexed - 1);
-        document.getElementById("b" + (indexed - 1)).classList.add("active");
-        indicator.style.transform = `translateX(calc(${index * 90 - 90}px))`;
+        operation(indexed - 1);
       } else if (e.deltaY > 0) {
-        localStorage.setItem("lastSection", indexed + 1);
-        document.getElementById("b" + (indexed + 1)).classList.add("active");
-        indicator.style.transform = `translateX(calc(${index * 90 + 90}px))`;
+        operation(indexed + 1);
       }
       waitWheel++;
       setTimeout(() => {
