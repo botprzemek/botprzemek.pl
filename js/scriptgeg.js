@@ -1,84 +1,23 @@
-// INTRO
-
-// function intro() {
-//   let src = ["text.webm", "lines.webm"];
-//   let srcEl = new Array();
-//   let intro = document.createElement("div");
-//   let vidBox = document.createElement("div");
-//   document.body.appendChild(intro);
-//   intro.classList.add("intro");
-//   for (let i = 0; i < src.length; i++) {
-//     srcEl[i] = document.createElement("video");
-//     Object.assign(srcEl[i], {
-//       src: src[i],
-//       autoplay: " ",
-//       muted: " ",
-//     });
-//   }
-//   intro.appendChild(vidBox);
-//   vidBox.appendChild(srcEl[0]);
-//   intro.appendChild(srcEl[1]);
-//   setTimeout(() => {
-//     document.body.removeChild(intro);
-//   }, 2500);
-// }
-
+const navBar = document.querySelector(".navbar");
+const indicator = document.querySelector(".indicator");
+let allLi = document.querySelectorAll("li");
+let allSe = document.querySelectorAll(".section");
+let first_id = "s1";
+let last_id = ("s" + allSe.length).toString();
+let waitWheel = 0;
 let wait = 0;
-
-//LOADING ANIMATION
-
-function loading() {
-  let slide1 = document.getElementById("1");
-  let slide2 = document.getElementById("2");
-  let left = document.getElementById("left");
-  let right = document.getElementById("right");
-  let nav = document.getElementById("nav");
-  let allSectionTitles = document.querySelectorAll(".section > h1");
-
-  left.style.display = "none";
-  right.style.display = "none";
-  allSectionTitles.forEach((titles) => {
-    titles.style.display = "none";
-  });
-
-  slide1.style.display = "none";
-  slide2.style.display = "none";
-
-  setTimeout(() => {
-    left.style.display = "flex";
-    right.style.display = "flex";
-  }, 100);
-  setTimeout(() => {
-    allSectionTitles.forEach((titles) => {
-      titles.style.display = "flex";
-    });
-  }, 1);
-  setTimeout(() => {
-    nav.style.transform = "translateY(0%)";
-    slide1.style.display = "block";
-    wait = 1;
-  }, 500);
-  setTimeout(() => {
-    slide2.style.display = "block";
-  }, 1);
-}
+let h = innerHeight;
 
 // NAVBAR
 
 function menu() {
-  const indicator = document.querySelector(".indicator");
-  const navBar = document.querySelector(".navbar");
-  let allLi = document.querySelectorAll("li");
-  let allSe = document.querySelectorAll(".section");
-  let waitwheel = 0;
-  let h = innerHeight;
-
   allLi.forEach((li, index) => {
     li.addEventListener("click", (e) => {
       e.preventDefault();
       navBar.querySelector(".active").classList.remove("active");
       li.classList.add("active");
 
+      localStorage.setItem("lastSection", index + 1);
       indicator.style.transform = `translateX(calc(${index * 90}px))`;
 
       setTimeout(() => {
@@ -91,111 +30,120 @@ function menu() {
       }, 10);
     });
   });
-
   allSe.forEach((section, index) => {
     let indexed = index + 1;
-
-    let rect = section.getBoundingClientRect();
-    console.log(rect.top);
-
-    // section.addEventListener("mouseover", (e) => {
-    //   e.preventDefault();
-    //   once: true;
-
-    //   indicator.style.transform = `translateX(calc(${index * 90}px))`;
-    // });
-    // console.log("${content.scrollTop}");
-    // e.preventDefault();
-    // once: true;
-    // navBar.querySelector(".active").classList.remove("active");
-
-    // document.getElementById("b" + indexed).classList.add("active");
-
-    // const indicator = document.querySelector(".indicator");
-    // indicator.style.transform = `translateX(calc(${index * 90}px))`;
     section.addEventListener("wheel", (e) => {
       once: true;
-      if (waitwheel == 1) {
+      if (waitWheel == 1) {
         e.preventDefault();
         setTimeout(() => {
-          waitwheel = 0;
+          waitWheel = 0;
         }, 10);
       } else {
+        if (
+          (e.deltaY < 0 && section.id == first_id) ||
+          (e.deltaY > 0 && section.id == last_id)
+        ) {
+          return;
+        }
+        navBar.querySelector(".active").classList.remove("active");
         if (e.deltaY < 0) {
-          if (section.id == "s1") return;
-          navBar.querySelector(".active").classList.remove("active");
+          localStorage.setItem("lastSection", indexed - 1);
           document.getElementById("b" + (indexed - 1)).classList.add("active");
           indicator.style.transform = `translateX(calc(${index * 90 - 90}px))`;
         } else if (e.deltaY > 0) {
-          navBar.querySelector(".active").classList.remove("active");
+          localStorage.setItem("lastSection", indexed + 1);
           document.getElementById("b" + (indexed + 1)).classList.add("active");
           indicator.style.transform = `translateX(calc(${index * 90 + 90}px))`;
         }
-        waitwheel++;
+        waitWheel++;
         setTimeout(() => {
-          waitwheel--;
+          waitWheel--;
         }, 10);
       }
     });
   });
+}
 
+// BUTTONS
+
+function categories() {
+  let left = document.querySelectorAll(".left");
+  let right = document.querySelectorAll(".right");
+
+  left.forEach((lefty) => {
+    let righty = lefty.parentNode.querySelector(".right");
+    let click_left = 0;
+    lefty.addEventListener("mouseover", () => {
+      lefty.style.cursor = "pointer";
+    });
+    lefty.addEventListener("mouseout", () => {
+      lefty.style.cursor = "auto";
+    });
+    lefty.addEventListener("click", () => {
+      if (click_left == 1) {
+        lefty.style = "width: 25% !important; z-index: 6 !important";
+        lefty.parentNode.style = "height: 30% !important";
+        click_left--;
+      } else {
+        lefty.style = "width: 50% !important; z-index: 10 !important";
+        righty.style = "width: 25% !important; z-index: 6 !important";
+        lefty.parentNode.style = "height: 100% !important";
+        click_left++;
+      }
+    });
+  });
+
+  right.forEach((righty) => {
+    let lefty = righty.parentNode.querySelector(".left");
+    click_right = 0;
+    righty.addEventListener("mouseover", () => {
+      righty.style.cursor = "pointer";
+    });
+    righty.addEventListener("mouseout", () => {
+      righty.style.cursor = "auto";
+    });
+    righty.addEventListener("click", () => {
+      if (click_right == 1) {
+        righty.style = "width: 25% !important; z-index: 6 !important";
+        righty.parentNode.style = "height: 30% !important";
+        click_right--;
+      } else {
+        righty.style = "width: 50% !important; z-index: 10 !important";
+        lefty.style = "width: 25% !important; z-index: 6 !important";
+        righty.parentNode.style = "height: 100% !important";
+        click_right++;
+      }
+    });
+  });
+}
+
+function waiting() {
+  navBar.querySelector(".active").classList.remove("active");
+  allLi[localStorage.getItem("lastSection") - 1].classList.add("active");
+  indicator.style.transform = `translateX(${
+    (localStorage.getItem("lastSection") - 1) * 90
+  }px)`;
+
+  if (wait == 0) {
+    document.body.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+    document.body.addEventListener("mouseover", (e) => {
+      e.preventDefault();
+    });
+  }
   document.body.addEventListener("contextmenu", (e) => {
     e.preventDefault();
   });
 }
 
-// TITLE
-
-let click_left = 0;
-
-left.addEventListener("click", () => {
-  if (click_left == 1) {
-    left.classList.remove("clicked_left");
-    right.parentNode.classList.remove("boxed_animation");
-    click_left--;
-  } else {
-    left.classList.add("clicked_left");
-    right.classList.remove("clicked_right");
-    left.parentNode.classList.add("boxed_animation");
-    click_left++;
-  }
-});
-
-click_right = 0;
-
-right.addEventListener("click", () => {
-  if (click_right == 1) {
-    right.classList.remove("clicked_right");
-    right.parentNode.classList.remove("boxed_animation");
-    click_right--;
-  } else {
-    right.classList.add("clicked_right");
-    left.classList.remove("clicked_left");
-    right.parentNode.classList.add("boxed_animation");
-    click_right++;
-  }
-});
-
-let linksList = [
-  "css/sliders.css",
-  "css/content3.css",
-  "css/navbar2.css",
-  "css/title7.css",
-  "css/intro1.css",
-  "https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css",
-  "https://use.typekit.net/pvb1zov.css",
-];
-
-for (let i = 0; i < linksList.length; i++) {
-  let link = document.createElement("link");
-  document.head.appendChild(link);
-  link.type = "text/css";
-  link.rel = "stylesheet";
-  link.href = linksList[i];
-}
-
-//window.onload = intro();
-window.onload = loading();
+waiting();
 setTimeout(() => {
-  if (wait == 1) window.onload = menu();
-}, 3501);
+  navBar.style.transform = "translateY(0%)";
+  indicator.style.transition =
+    "all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+  wait = 1;
+  menu();
+  categories();
+}, 1000);
