@@ -33,12 +33,11 @@ function menu() {
   allSe.forEach((section, index) => {
     let indexed = index + 1;
     section.addEventListener("wheel", (e) => {
+      console.log(indexed);
       once: true;
       if (waitWheel == 1) {
         e.preventDefault();
         setTimeout(() => {
-          console.log(indexed);
-          console.log(waitWheel);
           waitWheel = 0;
           return;
         }, 10);
