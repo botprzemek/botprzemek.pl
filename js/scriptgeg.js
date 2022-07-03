@@ -123,7 +123,7 @@ function waiting() {
   let lastSection = localStorage.getItem("lastSection");
   if (lastSection != 0) {
     lastSection--;
-  } else if (lastSection == 1) {
+  } else if (lastSection == 0) {
     lastSection = 1;
   }
   console.log(lastSection);
