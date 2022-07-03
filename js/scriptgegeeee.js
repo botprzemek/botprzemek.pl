@@ -121,9 +121,7 @@ function categories() {
 function waiting() {
   navBar.querySelector(".active").classList.remove("active");
   let lastSection = localStorage.getItem("lastSection");
-  if (lastSection != 0) {
-    lastSection--;
-  } else if (lastSection == 0 || lastSection == -1) {
+  if (lastSection <= 0) {
     lastSection = 1;
   }
   console.log(lastSection);
