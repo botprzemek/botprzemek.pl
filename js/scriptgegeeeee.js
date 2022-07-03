@@ -123,10 +123,12 @@ function waiting() {
   let lastSection = localStorage.getItem("lastSection");
   if (lastSection <= 0) {
     lastSection = 1;
+    allLi[lastSection - 1].classList.add("active");
+    indicator.style.transform = `translateX(${lastSection * 90 - 90}px)`;
+  } else {
+    allLi[lastSection].classList.add("active");
+    indicator.style.transform = `translateX(${lastSection * 90}px)`;
   }
-  console.log(lastSection);
-  allLi[lastSection].classList.add("active");
-  indicator.style.transform = `translateX(${lastSection * 90}px)`;
 
   if (wait == 0) {
     document.body.addEventListener("click", (e) => {
