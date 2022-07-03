@@ -121,7 +121,8 @@ function categories() {
 function waiting() {
   navBar.querySelector(".active").classList.remove("active");
   let lastSection = localStorage.getItem("lastSection") - 1;
-  allLi[lastSection].classList.add("active");
+  console.log(lastSection);
+  //allLi[lastSection].classList.add("active");
   indicator.style.transform = `translateX(${lastSection * 90}px)`;
 
   if (wait == 0) {
