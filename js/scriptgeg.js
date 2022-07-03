@@ -127,7 +127,7 @@ function waiting() {
     lastSection = 1;
   }
   console.log(lastSection);
-  //allLi[lastSection].classList.add("active");
+  allLi[lastSection].classList.add("active");
   indicator.style.transform = `translateX(${lastSection * 90}px)`;
 
   if (wait == 0) {
