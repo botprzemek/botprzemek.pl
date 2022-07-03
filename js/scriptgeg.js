@@ -120,10 +120,9 @@ function categories() {
 
 function waiting() {
   navBar.querySelector(".active").classList.remove("active");
-  allLi[localStorage.getItem("lastSection") - 1].classList.add("active");
-  indicator.style.transform = `translateX(${
-    (localStorage.getItem("lastSection") - 1) * 90
-  }px)`;
+  let lastSection = localStorage.getItem("lastSection") - 1;
+  allLi[lastSection].classList.add("active");
+  indicator.style.transform = `translateX(${lastSection * 90}px)`;
 
   if (wait == 0) {
     document.body.addEventListener("click", (e) => {
