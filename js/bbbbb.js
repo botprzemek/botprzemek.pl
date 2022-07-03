@@ -33,7 +33,6 @@ function menu() {
   allSe.forEach((section, index) => {
     let indexed = index + 1;
     section.addEventListener("wheel", (e) => {
-      console.log(indexed);
       once: true;
       if (waitWheel == 1) {
         e.preventDefault();
@@ -48,18 +47,16 @@ function menu() {
       ) {
         return;
       }
+      navBar.querySelector(".active").classList.remove("active");
       if (e.deltaY < 0) {
-        console.log("gora");
         localStorage.setItem("lastSection", indexed - 1);
         document.getElementById("b" + (indexed - 1)).classList.add("active");
         indicator.style.transform = `translateX(calc(${index * 90 - 90}px))`;
       } else if (e.deltaY > 0) {
-        console.log("dol");
         localStorage.setItem("lastSection", indexed + 1);
         document.getElementById("b" + (indexed + 1)).classList.add("active");
         indicator.style.transform = `translateX(calc(${index * 90 + 90}px))`;
       }
-      navBar.querySelector(".active").classList.remove("active");
       waitWheel++;
       setTimeout(() => {
         waitWheel--;
