@@ -46,7 +46,6 @@ function menu() {
         ) {
           return;
         }
-        navBar.querySelector(".active").classList.remove("active");
         if (e.deltaY < 0) {
           localStorage.setItem("lastSection", indexed - 1);
           document.getElementById("b" + (indexed - 1)).classList.add("active");
@@ -56,6 +55,7 @@ function menu() {
           document.getElementById("b" + (indexed + 1)).classList.add("active");
           indicator.style.transform = `translateX(calc(${index * 90 + 90}px))`;
         }
+        navBar.querySelector(".active").classList.remove("active");
         waitWheel++;
         setTimeout(() => {
           waitWheel--;
@@ -120,9 +120,14 @@ function categories() {
 
 function waiting() {
   navBar.querySelector(".active").classList.remove("active");
-  let lastSection = localStorage.getItem("lastSection") - 1;
+  let lastSection = localStorage.getItem("lastSection");
+  if (lastSection != 0) {
+    lastSection--;
+  } else if (lastSection == 1) {
+    lastSection = 1;
+  }
   console.log(lastSection);
-  //allLi[lastSection].classList.add("active");
+  allLi[lastSection].classList.add("active");
   indicator.style.transform = `translateX(${lastSection * 90}px)`;
 
   if (wait == 0) {
