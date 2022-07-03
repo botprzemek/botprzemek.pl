@@ -49,12 +49,12 @@ function menu() {
         return;
       }
       if (e.deltaY < 0) {
-        console.log(gora);
+        console.log("gora");
         localStorage.setItem("lastSection", indexed - 1);
         document.getElementById("b" + (indexed - 1)).classList.add("active");
         indicator.style.transform = `translateX(calc(${index * 90 - 90}px))`;
       } else if (e.deltaY > 0) {
-        console.log(dol);
+        console.log("dol");
         localStorage.setItem("lastSection", indexed + 1);
         document.getElementById("b" + (indexed + 1)).classList.add("active");
         indicator.style.transform = `translateX(calc(${index * 90 + 90}px))`;
