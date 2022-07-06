@@ -1,0 +1,424 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  max-width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0px;
+  left: 0;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  float: left;
+  scroll-snap-align: start;
+}
+
+.front {
+  margin: 2% 0 0 3%;
+  color: #222;
+  z-index: 4;
+  position: absolute;
+  font-size: 13.45rem;
+  animation: title 750ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.left:hover::before {
+  transform: translate(0%, 0px);
+}
+
+.left::before {
+  transform: translate(-101%, 0px);
+  transform-origin: bottom left;
+}
+
+.right:hover::before {
+  transform: translate(-50%, 0px);
+}
+
+.right::before {
+  transform: translate(101%, 0px);
+  transform-origin: bottom right;
+}
+
+.test h1 {
+  color: #222;
+  font-size: 4rem;
+  font-weight: 600;
+  font-style: italic;
+  padding: 1rem 3rem 1rem 3rem;
+  margin: 0;
+  transition: 0.3s cubic-bezier(0.39, 0.22, 0.31, 0.88);
+  z-index: 7;
+}
+
+.test:hover h1 {
+  color: white;
+}
+
+.left {
+  text-align: left;
+  justify-content: flex-start;
+  transition: 0.3s cubic-bezier(0.39, 0.22, 0.31, 0.88);
+}
+
+.right {
+  text-align: right;
+  justify-content: flex-end;
+  transition: 0.3s cubic-bezier(0.39, 0.22, 0.31, 0.88);
+}
+
+.test::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  inset: 0 0 0 0;
+  z-index: 6;
+  width: 200%;
+  background-color: #222;
+  background-size: 400% 400%;
+  background-position: center;
+  object-fit: cover;
+  animation: gradient 6s ease infinite;
+  transition: 0.3s cubic-bezier(0.39, 0.22, 0.31, 0.88);
+}
+
+.test {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 6;
+}
+
+.boxed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 30%;
+  z-index: 6;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.3s 0.3s cubic-bezier(0.39, 0.22, 0.31, 0.88);
+  animation: loading 1s 1ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 150%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 75px;
+  z-index: 1;
+}
+
+.navbar {
+  height: 75px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  transform: translateY(-120%);
+  animation: translate 1s 1ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+@keyframes translate {
+  0% {
+    transform: translateY(-120%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  z-index: 999;
+}
+
+.navbar ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 115px;
+  width: 90px;
+}
+
+.navbar ul li a {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.navbar ul li a:hover {
+  cursor: pointer;
+}
+
+.navbar ul li a i {
+  position: absolute;
+  font-size: 38px;
+  color: #222;
+}
+
+ul li a i.activeIcon {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.6s ease;
+  transition-delay: 0.2s;
+}
+
+.navbar ul li.active a i {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar ul .indicator {
+  position: absolute;
+  top: 70px;
+  left: 37px;
+  height: 15px;
+  width: 15px;
+  background: #222;
+  border-radius: 50%;
+}
+
+@font-face {
+  font-family: boxicons;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.eot);
+  src: url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.eot)
+      format("embedded-opentype"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.woff2) format("woff2"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.woff) format("woff"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.ttf) format("truetype"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.svg?#boxicons)
+      format("svg");
+}
+.bx {
+  font-family: boxicons !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  display: inline-block;
+  text-transform: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bx-ul {
+  margin-left: 2em;
+  padding-left: 0;
+  list-style: none;
+}
+.bx-ul > li {
+  position: relative;
+}
+.bx-ul .bx {
+  font-size: inherit;
+  line-height: inherit;
+  position: absolute;
+  left: -2em;
+  width: 2em;
+  text-align: center;
+}
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+    transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -10deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -10deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+    transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.bx-tada-hover:hover {
+  -webkit-animation: tada 1.5s ease infinite;
+  animation: tada 1.5s ease infinite;
+}
+.bx-home:before {
+  content: "\eb12";
+}
+.bxs-home:before {
+  content: "\ede7";
+}
+.bx-user:before {
+  content: "\ec63";
+}
+.bxs-user:before {
+  content: "\eee1";
+}
+.bx-flag:before {
+  content: "\eade";
+}
+.bxs-flag:before {
+  content: "\edc3";
+}
+.bx-collection:before {
+  content: "\ea72";
+}
+.bxs-collection:before {
+  content: "\ed55";
+}
+
+@font-face {
+  font-family: "acumin-pro";
+  src: url("https://use.typekit.net/af/6d4bb2/00000000000000003b9acafc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+    format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "acumin-pro";
+  src: url("https://use.typekit.net/af/6ce26b/00000000000000003b9acafd/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+    format("woff2");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+.tk-acumin-pro {
+  font-family: "acumin-pro", sans-serif;
+}

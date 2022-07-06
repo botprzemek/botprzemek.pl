@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  background-color: white;
+  overflow: hidden;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.loadBackground {
+  background-color: #222;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  transition: 750ms cubic-bezier(0.36, 0.06, 0.09, 0.99);
+}
+.title {
+  color: #222;
+  font-size: 6em;
+  margin-bottom: 2.5%;
+}
+.table {
+  height: 50%;
+  width: 80%;
+  display: grid;
+  grid-column-gap: 2%;
+  margin-bottom: 5%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  border-radius: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: #222 5px solid;
+  background-color: #222;
+  transition: 0.3s cubic-bezier(0.39, 0.22, 0.31, 0.88);
+}
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.column {
+  background-color: #222;
+  color: white;
+  font-size: 1.6em;
+  padding-bottom: 2%;
+}
+.row {
+  background-color: white;
+  color: #222;
+  font-size: 2em;
+}
+.box:nth-child(2) {
+  padding-top: 5%;
+}
+.box:nth-child(7) {
+  grid-row-start: 7;
+  grid-row-end: 9;
+  color: royalblue;
+}
+.nextPage {
+  background-color: #222;
+  position: absolute;
+  border-radius: 500vw;
+  z-index: 999;
+  transition: 1100ms ease-in-out all;
+}
+
+@font-face {
+  font-family: "acumin-pro";
+  src: url("https://use.typekit.net/af/6d4bb2/00000000000000003b9acafc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+    format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "acumin-pro";
+  src: url("https://use.typekit.net/af/6ce26b/00000000000000003b9acafd/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+    format("woff2");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+.tk-acumin-pro {
+  font-family: "acumin-pro", sans-serif;
+}

@@ -122,15 +122,6 @@
   z-index: 3;
 }
 
-.front {
-  margin: 2% 0 0 3%;
-  color: #222;
-  z-index: 4;
-  position: absolute;
-  font-size: 13.45rem;
-  animation: title 750ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
-}
-
 @keyframes slide {
   0% {
     display: block;
@@ -152,16 +143,5 @@
   }
   100% {
     background-position: 0% 50%;
-  }
-}
-
-@keyframes title {
-  0% {
-    opacity: 0;
-    transform: translateY(20%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
   }
 }

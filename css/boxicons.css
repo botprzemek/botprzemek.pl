@@ -1,0 +1,132 @@
+@font-face {
+  font-family: boxicons;
+  font-weight: 400;
+  font-style: normal;
+  src: url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.eot);
+  src: url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.eot)
+      format("embedded-opentype"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.woff2) format("woff2"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.woff) format("woff"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.ttf) format("truetype"),
+    url(https://unpkg.com/boxicons@2.1.1/fonts/boxicons.svg?#boxicons)
+      format("svg");
+}
+.bx {
+  font-family: boxicons !important;
+  font-weight: 400;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  display: inline-block;
+  text-transform: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.bx-ul {
+  margin-left: 2em;
+  padding-left: 0;
+  list-style: none;
+}
+.bx-ul > li {
+  position: relative;
+}
+.bx-ul .bx {
+  font-size: inherit;
+  line-height: inherit;
+  position: absolute;
+  left: -2em;
+  width: 2em;
+  text-align: center;
+}
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+    transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -10deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, -10deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    -webkit-transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+    transform: scale3d(0.95, 0.95, 0.95) rotate3d(0, 0, 1, -10deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 10deg);
+  }
+  40%,
+  60%,
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -10deg);
+    transform: rotate3d(0, 0, 1, -10deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.bx-tada-hover:hover {
+  -webkit-animation: tada 1.5s ease infinite;
+  animation: tada 1.5s ease infinite;
+}
+.bx-home:before {
+  content: "\eb12";
+}
+.bxs-home:before {
+  content: "\ede7";
+}
+.bx-user:before {
+  content: "\ec63";
+}
+.bxs-user:before {
+  content: "\eee1";
+}
+.bx-flag:before {
+  content: "\eade";
+}
+.bxs-flag:before {
+  content: "\edc3";
+}
+.bx-collection:before {
+  content: "\ea72";
+}
+.bxs-collection:before {
+  content: "\ed55";
+}
+.bx-message:before {
+  content: "\eb63";
+}
+.bxs-message:before {
+  content: "\ee21";
+}
