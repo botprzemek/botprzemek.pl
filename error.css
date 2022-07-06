@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  max-width: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 2% 0 0 3%;
+  color: #222;
+  z-index: 4;
+  position: absolute;
+  font-size: 13.45rem;
+  animation: title 750ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.description {
+  margin: 18rem 0 0 3%;
+  color: #222;
+  z-index: 4;
+  position: absolute;
+  font-size: 7rem;
+  animation: title 750ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.counting {
+  margin: 0 18rem 3% 0;
+  color: #222;
+  z-index: 4;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  font-size: 7rem;
+  animation: title 1000ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+.loadBackground {
+  background-color: #222;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: 750ms cubic-bezier(0.36, 0.06, 0.09, 0.99);
+}
+
+@keyframes title {
+  0% {
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@font-face {
+  font-family: "acumin-pro";
+  src: url("https://use.typekit.net/af/6d4bb2/00000000000000003b9acafc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3")
+    format("woff2");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "acumin-pro";
+  src: url("https://use.typekit.net/af/6ce26b/00000000000000003b9acafd/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3")
+    format("woff2");
+  font-display: auto;
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: normal;
+}
+
+.tk-acumin-pro {
+  font-family: "acumin-pro", sans-serif;
+}
