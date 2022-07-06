@@ -1,3 +1,11 @@
+window.onpageshow = function () {
+  if (
+    String(window.performance.getEntriesByType("navigation")[0].type) ===
+    "back_forward"
+  ) {
+    window.location.reload();
+  }
+};
 const navBar = document.querySelector(".navbar");
 const indicator = document.querySelector(".indicator");
 let allLi = document.querySelectorAll("li");

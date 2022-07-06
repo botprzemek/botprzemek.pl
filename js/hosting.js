@@ -1,3 +1,11 @@
+window.onpageshow = function () {
+  if (
+    String(window.performance.getEntriesByType("navigation")[0].type) ===
+    "back_forward"
+  ) {
+    window.location.reload();
+  }
+};
 let containers = new Array();
 let columns = new Array();
 let columnsText = new Array();

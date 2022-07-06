@@ -33,7 +33,7 @@ body {
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr;
   grid-template-rows: 1fr;
   overflow: hidden;
   box-sizing: border-box;
@@ -49,22 +49,25 @@ body {
 }
 
 .description {
-  margin: 18rem 0 0 3%;
-  color: #222;
+  color: white;
+  width: 65%;
+  background-color: #222;
+  padding: 2.5% 0 2.5% 3%;
   z-index: 4;
-  position: absolute;
-  font-size: 7rem;
-  animation: title 750ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+  font-size: 5rem;
+  font-style: italic;
+  animation: description 600ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+  align-self: center;
 }
 
 .counting {
-  margin: 0 18rem 3% 0;
+  margin: 0 6rem 3% 0;
   color: #222;
   z-index: 4;
   bottom: 0;
   right: 0;
   position: absolute;
-  font-size: 7rem;
+  font-size: 5rem;
   animation: title 1000ms cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
 }
 
@@ -85,6 +88,15 @@ body {
   }
   100% {
     opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes description {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
     transform: translateY(0%);
   }
 }
