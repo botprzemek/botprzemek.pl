@@ -1,0 +1,123 @@
+<head>
+    <title>Najlepsze obrazki w internecie</title>
+    <style>
+        * {
+            overflow-x: hidden;
+            margin: 0;
+            font-family: "times new roman"
+        }
+
+        body {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .essa {
+            position: absolute;
+            z-index: 1;
+            top: 120px;
+        }
+
+        img {
+            position: absolute;
+        }
+
+        @keyframes glitch {
+
+            2%,
+            64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+        div:before,
+        div:after {
+            content: attr(title);
+            position: absolute;
+            left: 0;
+        }
+
+        div:before {
+            animation: glitchTop 1s linear infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+
+        @keyframes glitchTop {
+
+            2%,
+            64% {
+                transform: translate(2px, -2px);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 2px);
+            }
+
+            62% {
+                transform: translate(13px, -1px) skew(-13deg);
+            }
+        }
+
+        div:after {
+            animation: glitchBotom 1.5s linear infinite;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+
+        @keyframes glitchBotom {
+
+            2%,
+            64% {
+                transform: translate(-2px, 0);
+            }
+
+            4%,
+            60% {
+                transform: translate(-2px, 0);
+            }
+
+            62% {
+                transform: translate(-22px, 5px) skew(21deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <embed src="ted.mp3" autostart="true" width="2" height="0">
+    <h1>Smieszna malpa . pl</h1>
+    <p>nie przychodzcie jutro do skzoly</p>
+
+    <script>
+        let zdj = ["https://occ-0-1009-1217.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABc_t2ZUcF4o4S57Mfyhw4XZG4e9srKlgdpV9Ib9eRmitNw_wvs9KNAQB-iF8G-GKUj1mqCOStzKRevryf76IWlK9GeaSqelfCLC3.jpg?r=bf3", "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Theodore_Kaczynski.jpg/220px-Theodore_Kaczynski.jpg", "https://fsgk.pl/wordpress/wp-content/uploads/2020/02/xTheodore-Kaczynski-arrest-April-1996-800x445.jpg.pagespeed.ic.gf8Xgp2ZOq.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Young_theodore_kaczynski.jpeg/220px-Young_theodore_kaczynski.jpeg", "https://ocdn.eu/images/pulscms/ZGM7MDA_/28950363092a7f38269cc5f54f469cfd.jpeg", "https://fsgk.pl/wordpress/wp-content/uploads/2020/02/Theodore-Kaczynski-arrest-April-1996.jpg", "https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/4/2022/06/Ted-Kaczynski-GettyImages-1321917679.jpg", "https://editorial01.shutterstock.com/wm-preview-1500/6530163a/7acae118/Shutterstock_6530163a.jpg", "https://d-art.ppstatic.pl/kadry/k/r/1/98/15/5669babd73b85_o_small.jpg", "https://schoolworkhelper.net/wp-content/uploads/2011/07/Theodore_Kaczynski.jpg"], img = [];
+        for (let j = 0; j < 50; j++) {
+            for (let i = 0; i < zdj.length; i++) {
+                img[i] = document.createElement("img");
+                img[i].src = zdj[i];
+                img[i].height = Math.floor(Math.random() * 666) / 3 + 50;
+                let z = Math.floor(Math.random()*5), hue = Math.floor(Math.random() * 250) + 100, x = Math.floor(Math.random() * 1300) % window.innerWidth, y = Math.floor(Math.random() * (30 * window.innerHeight - window.innerHeight) + 50);let dur=Math.floor(Math.random() * (10-0.5)+0.5); let del=Math.floor(Math.random() * (20-0.5)+0.5);
+                img[i].setAttribute('style', 'z-index:'+z+';top:' + y + 'px;left:' + x + 'px;filter: grayscale(18%) sepia(63%) brightness(35%) hue-rotate(' + hue + 'deg) saturate(853%) contrast(518%);animation: glitch '+dur+'s '+del+'s linear infinite;');
+                document.body.appendChild(img[i]);
+            };
+        };
+        setTimeout(() => {
+            document.body.style.backgroundColor="black";
+            document.querySelectorAll("h1,p,span").forEach((el) => {el.style.color="white";});
+        }, 5000);
+    </script>
+
+    <p class="essa">INTRODUCTION test
