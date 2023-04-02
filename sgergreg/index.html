@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nick</title>
+    <style>
+      @font-face {
+        font-family: "Minecraft Regular";
+        font-style: normal;
+        font-weight: normal;
+        src: local("Minecraft Regular"),
+          url("1_MinecraftRegular1.woff") format("woff");
+      }
+
+      @font-face {
+        font-family: "Minecraft Bold";
+        font-style: normal;
+        font-weight: normal;
+        src: local("Minecraft Bold"),
+          url("3_MinecraftBold1.woff") format("woff");
+      }
+
+      @keyframes AnimationName {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      * {
+        margin: 0;
+        overflow-x: hidden;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div {
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        width: 100%;
+        font-size: 10rem;
+        font-family: "Minecraft Bold", sans-serif;
+        background-color: #fbda61;
+        background-image: linear-gradient(90deg, #ecdf76, #f795e2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="text">botprzemek</h1>
+    </div>
+    <script>
+      var text = document.getElementById("text");
+      let i = 0;
+      setInterval(() => {
+        i++;
+        text.textContent = text.textContent + i;
+      }, 1000);
+    </script>
+  </body>
+</html>
