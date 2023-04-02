@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="content.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="title.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>botprzemek</title>
+  </head>
+  <body>
+    <div class="sidenav">
+      <div class="navbar" id="nav">
+        <ul>
+          <li class="active" id="b1">
+            <a>
+              <i class="bx bx-home bx-tada-hover icon"></i>
+              <i class="bx bxs-home activeIcon"></i>
+            </a>
+          </li>
+          <li id="b2">
+            <a>
+              <i class="bx bx-user bx-tada-hover icon"></i>
+              <i class="bx bxs-user activeIcon"></i>
+            </a>
+          </li>
+          <li id="b3">
+            <a>
+              <i class="bx bx-flag bx-tada-hover icon"></i>
+              <i class="bx bxs-flag activeIcon"></i>
+            </a>
+          </li>
+          <li id="b4">
+            <a>
+              <i class="bx bx-collection bx-tada-hover icon"></i>
+              <i class="bx bxs-collection activeIcon"></i>
+            </a>
+          </li>
+          <li id="b5">
+            <a>
+              <i class="bx bx-message-alt bx-tada-hover icon"></i>
+              <i class="bx bxs-message-alt activeIcon"></i>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <div class="content" id="content">
+        <div id="s1" class="section">
+          <div class="boxed">
+            <div class="test left">
+              <h1>bpPanel</h1>
+            </div>
+            <div class="test right">
+              <h1>other stuff</h1>
+            </div>
+          </div>
+        </div>
+        <div id="s2" class="section">About</div>
+        <div id="s3" class="section">Services</div>
+        <div id="s4" class="section">Gallery</div>
+        <div id="s5" class="section">Contact</div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+    <script>
+      let nav = document.getElementById("nav");
+      setTimeout(() => {
+        nav.style.transform = "translateY(0%)";
+      }, 1000);
+    </script>
+  </body>
+</html>

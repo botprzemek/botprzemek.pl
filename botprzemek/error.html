@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Błąd podstrony</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        html,body,p,img,div,h1,h2,h3,.header{
+          margin: 0;
+          padding: 0;
+          user-select: none;
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          height: 100vh;
+          font-family: 'Poppins', sans-serif;
+          background: linear-gradient(90deg, rgb(67, 170, 255) 0%, rgb(89, 255, 200) 100%);
+          color: #f3fffa;
+        }
+        .header{
+          font-size: 3rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+        .back{
+          background-color: white;
+          outline: none;
+          border: none;
+          border-radius: 520px;
+          font-size: 1.75rem;
+          font-family: 'Poppins', sans-serif;
+          padding: 0.4rem 20rem 0.4rem 20rem;
+          color: #333;
+          margin-bottom: 3rem;
+        }
+        .back:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p class="header">Ups! Strona której szukasz, nie istnieje</p>
+    <button class="back" onclick="window.location='../';">Wróć do strony głównej</button>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="test.css" /> -->
+    <title>Test</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        background-color: #222;
+        position: relative;
+      }
+      .screen {
+        width: 20%;
+        height: 100%;
+        background-color: #222;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: absolute;
+      }
+      .slider {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-origin: bottom;
+        z-index: 3;
+      }
+      .x {
+        right: 0;
+        background: linear-gradient(250deg, #6dd7ff, #56e468);
+        background-size: 400% 400%;
+        animation: gradient 3s ease infinite,
+          slide 1s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+      }
+      .y {
+        left: 0;
+        background: linear-gradient(250deg, #ffc248, #ff702d);
+        background-size: 400% 400%;
+        animation: gradient 3s ease infinite,
+          slide 1.2s 0.1s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+      }
+
+      .screen2 {
+        width: 2%;
+        height: 80%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 35vw;
+        z-index: 5;
+      }
+      .slider2 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform-origin: top;
+        z-index: 3;
+      }
+      .x2 {
+        right: 0;
+        background: linear-gradient(250deg, #ffc248, #ff702d);
+        background-size: 400% 400%;
+        animation: gradient 3s ease infinite,
+          slide 1s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+      }
+      .y2 {
+        left: 0;
+        background: linear-gradient(250deg, #6dd7ff, #56e468);
+        background-size: 400% 400%;
+        animation: gradient 3s ease infinite,
+          slide 1.2s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+      }
+
+      .left {
+        width: 15%;
+        height: 30%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transform: translateX(-20vw);
+        z-index: 5;
+      }
+      
+      .right {
+        width: 25%;
+        height: 70%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        transform: translate(30vw, 10vw);
+        z-index: 3;
+      }
+
+      .center {
+        width: 6%;
+        height: 90%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: absolute;
+        top: 10%;
+        transform: translate(-35vw, 0);
+        z-index: 5;
+      }
+
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap");
+
+      .text {
+        position: absolute;
+        font-size: 11rem;
+        text-align: center;
+        font-weight: 600;
+        font-family: Poppins, sans-serif;
+      }
+
+      .front {
+        color: white;
+        z-index: 4;
+      }
+
+      @keyframes slide {
+        0% {
+          display: block;
+          transform: translateY(100%);
+          transform: scaleY(0%);
+        }
+        100% {
+          transform: translateY(0%);
+          transform: scaleY(100%);
+        }
+      }
+
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screen">
+      <div class="slider x"></div>
+      <div class="slider y"></div>
+    </div>
+
+    <div class="screen2" id="1">
+      <div class="slider2 x2"></div>
+      <div class="slider2 y2"></div>
+    </div>
+
+    <div class="screen2 left" id="2">
+      <div class="slider2 x2"></div>
+      <div class="slider2 y2"></div>
+    </div>
+
+    <div class="screen2 right" id="2">
+      <div class="slider2 x2"></div>
+      <div class="slider2 y2"></div>
+    </div>
+    
+    <div class="screen2 center" id="2">
+      <div class="slider x"></div>
+      <div class="slider y"></div>
+    </div>
+
+    <p class="text front">eeeeeeeeeeee</p>
+    <script>
+      let slide1 = document.getElementById("1");
+      let slide2 = document.getElementById("2");
+      slide1.style.display="none";
+      slide2.style.display="none";
+      setTimeout(() => {
+        slide1.style.display="block";
+      }, 500);
+      setTimeout(() => {
+        slide2.style.display="block";
+      }, 750);
+    </script>
+  </body>
+</html>

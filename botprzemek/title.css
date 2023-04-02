@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap");
+
+.left:hover::before {
+  transform: translate(0%, 0px);
+}
+
+.left::before {
+  transform: translate(-100%, 0px);
+  transform-origin: bottom left;
+  background: linear-gradient(240deg, #ff4f4f, #ffa64f);
+  background-size: 400% 400%;
+  background-position: center;
+  object-fit: cover;
+}
+
+.right:hover::before {
+  transform: translate(0%, 0px);
+}
+
+.right::before {
+  transform: translate(100%, 0px);
+  transform-origin: bottom right;
+  background: linear-gradient(240deg, #ff4f4f, #ffa64f);
+  background-size: 400% 400%;
+}
+
+.center::before {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+}
+
+.test h1 {
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0;
+}
+
+.left {
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.right {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+.center {
+  text-align: center;
+}
+.test::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  inset: 0 0 0 0;
+  z-index: -1;
+  transition: transform 0.3s cubic-bezier(0.39, 0.22, 0.31, 0.88);
+}
+
+.test {
+  width: 50%;
+  height: 100%;
+  padding: 1rem 3rem 1rem 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.boxed {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  animation: loading 1s 2s cubic-bezier(0.39, 0.22, 0.31, 0.88) none 1;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  background-color: #222;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 150%;
+  }
+  100% {
+    width: 100%;
+  }
+}
