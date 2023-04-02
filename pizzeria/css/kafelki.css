@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  transition: 0.3s ease all;
+  user-select: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body > p {
+  text-align: center;
+}
+
+.select {
+  height: 80vh;
+  width: 60%;
+  display: grid;
+  overflow: hidden;
+  padding: 0 20% 0 20%;
+}
+
+.container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.select > p {
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
+  font-weight: 600;
+  color: #333;
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container div span {
+  position: absolute;
+  text-align: center;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container:nth-child(2) div span {
+  flex-direction: column;
+}
+
+.container div span p {
+  margin: 0.3vw;
+  text-shadow: 0px 5px 5px #333;
+  z-index: 2;
+}
+
+.container div span p:first-child {
+  font-weight: 600 !important;
+}
+
+.box1,
+.box2,
+.box3 {
+  border-radius: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.dodaj {
+  border-radius: 50rem;
+  margin: 0.5rem;
+  padding: 0.025rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dodaj p {
+  text-align: center;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.box1::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+.container > .box1::before,
+.container > .box1 > p,
+.container > .box2::before,
+.container > .box2 > p,
+.container > .box3::before,
+.container > .box3 > p {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.box1,
+.box2,
+.box3,
+.dodaj {
+  background: url(../img/pexels-daria-shevtsova-1260968.jpg) no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  color: white;
+}
+
+.box1 {
+  background-position: right bottom;
+}
+
+.hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.box1.hover {
+  background-position: center;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 1rem;
+  opacity: 30%;
+}
+
+.box1 .icon {
+  background-image: url(../img/uncheck.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 15%;
+  z-index: 2;
+  margin: 1rem;
+}
+
+.box2 .icon {
+  background-image: url(../img/uncheckbox.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 12%;
+  margin-right: 2%;
+  z-index: 2;
+}
+
+.active .background {
+  opacity: 30%;
+}
+
+.box1.active .icon {
+  background-image: url(../img/check.svg);
+}
+
+.box2.active .icon {
+  background-image: url(../img/checkbox.svg);
+}
+
+.box1:not(.active, .hover) .background,
+.box2:not(.active, .hover) .background,
+.box3:not(.active, .hover) .background {
+  opacity: 80%;
+}
+
+.box2.hover .background,
+.box3.hover .background {
+  opacity: 30%;
+}
+
+.dodaj .background {
+  border-radius: 50rem;
+  opacity: 80%;
+}
+
+.koszyk {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5vw;
+  height: 5vw;
+  right: 0;
+  background-color: #333;
+  border-radius: 50rem 0 0 50rem;
+}
+
+.koszyk p {
+  font-weight: 600;
+  margin-left: -75%;
+  font-size: 2rem;
+  padding: 30%;
+  color: #333;
+}
+
+.koszyk div {
+  background-image: url(../img/koszyk.svg);
+  transition: 500ms ease all;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 70%;
+  z-index: 2;
+}
+
+.dodaj:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.koszyk:hover div {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.login {
+  position: absolute;
+  z-index: 99;
+  padding: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  top: 0;
+  right: 0;
+}
