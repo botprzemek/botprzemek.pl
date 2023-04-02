@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header p {
+  font-size: 2rem;
+  padding: 1rem;
+}
+.box {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+.dzien {
+  display: grid;
+  grid-template-rows: repeat(11, 1fr);
+  justify-content: center;
+  align-items: center;
+  background-color: #ff846e;
+  border-radius: 0 0 1rem 1rem;
+}
+.dzientygodnia {
+  text-align: center;
+  background-color: #ff846e;
+  border-radius: 1rem 1rem 0 0;
+  padding: 1rem 0 1rem 0;
+  color: white;
+  font-weight: bold;
+}
+.komorka {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  background-color: tomato;
+  margin: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 1rem;
+}
+.sala {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+.przedmiot {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #333;
+}

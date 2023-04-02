@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  user-select: none;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 6fr 4fr;
+}
+
+.nav {
+  background-color: #2b2d33;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  height: 100%;
+  padding: 0 5vw 0 5vw;
+}
+
+.logo a {
+  display: flex;
+  height: 100%;
+  justify-content: left;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.logo a span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo a span h1 {
+  z-index: 1;
+  color: #0cc;
+  letter-spacing: 0.3vw;
+  font-size: 2.5vw;
+  text-transform: uppercase;
+  transition: 250ms ease-in all;
+}
+
+.logo a span h1:nth-child(2) {
+  margin-left: 4vw;
+}
+
+.logo a:hover span h1 {
+  color: white;
+}
+
+.logo a span .image {
+  background-image: url(logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 6vw;
+  height: 50%;
+  margin-left: -10.9vw;
+  z-index: 2;
+}
+
+.box .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .links ul {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  padding-left: 0;
+  margin-left: 1vw;
+}
+
+.box .links ul li,
+.list .links ul li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5vw 0 0.5vw;
+  border-bottom: 0.4vw solid #0cc;
+}
+
+.box .links ul li a,
+.list .links ul li a {
+  text-transform: uppercase;
+  color: #0cc;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2vw;
+}
+
+.box .links ul li {
+  transition: 250ms ease-in all;
+}
+
+.box .links ul li a {
+  transition: 250ms ease-in all;
+}
+
+.box .links ul li:hover {
+  border-bottom: 0.4vw solid white;
+}
+
+.box .links ul li:hover a {
+  color: white;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 2fr 1fr;
+  padding: 0 5vw 0 5vw;
+}
+
+.content .photo {
+  background-image: url(scenery.png);
+  background-size: cover;
+  border: 8px solid #2b2d33;
+  margin: 1vw 0 1vw 0;
+}
+
+.content .text {
+  grid-column: 1 / 3;
+}
+
+.content .list1 {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: 1fr;
+  margin: 1vw 0 1vw 1vw;
+}
+
+.content .list1 .element {
+  background-color: #0cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .list1 .element:nth-child(1) {
+  background-color: #2b2d33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0cc;
+}
+
+.content .list1 .element a {
+  text-decoration: none;
+}
+
+.content .list1 .element a p {
+  width: 100%;
+  font-size: 1.5vw;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.content .text p {
+  color: #2b2d33;
+  font-size: 1.2vw;
+  text-align: justify;
+}
+
+.pattern {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 1vh;
+  background-image: url(border.png);
+  background-position: top;
+  background-repeat: repeat-x;
+}
+
+.footer {
+  background-color: #2b2d33;
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  grid-template-columns: 1fr;
+}
+
+.list {
+  margin: 0 5vw 0 5vw;
+  display: flex;
+  align-items: center;
+}
+
+.list .links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.list .links ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
+  padding: 0;
+}
+
+.list .links ul li {
+  border-bottom: none;
+  border-left: 0.4vw solid #0cc;
+}
+
+.list .links ul li a {
+  text-align: left;
+  width: 100%;
+  margin-left: 1vw;
+  color: #0cc;
+  transition: 250ms ease-in all;
+}
+
+.list .links ul li a:hover {
+  color: white;
+}
+
+.footer h2 {
+  background-color: #0cc;
+  color: #2b2d33;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 0.2vw 0 0.2vw 0;
+  margin: 0 5vw 0 5vw;
+  transition: 250ms ease-in all;
+}
+
+.footer h2:hover {
+  color: #2b2d33;
+  background-color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    height: 200vh;
+    grid-template-rows: 1fr 16fr 4fr;
+  }
+  .nav .box .logo a span {
+    margin-left: 15vw;
+  }
+  .nav .box .logo a span h1 {
+    font-size: 7vw;
+    margin-left: 0;
+  }
+  .logo a span .image {
+    margin-left: -57vw;
+    height: 100%;
+    width: 16vw;
+  }
+  .box .links {
+    display: none;
+  }
+  .content .photo {
+    background-position: 100%;
+    border: none;
+    margin: 0;
+  }
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr repeat(2, 4fr);
+    padding: 0;
+  }
+  .content .list1 {
+    margin: 0;
+  }
+  .content .list1 .element a p {
+    font-size: 8vw;
+  }
+  .content .text {
+    grid-column: unset;
+    margin: 0 5vw 0 5vw;
+    display: flex;
+    align-items: center;
+  }
+  .content .text p {
+    font-size: 4.9vw;
+  }
+  .list .links ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-auto-flow: column;
+    padding: 0;
+  }
+  .list .links ul li {
+    border: none;
+    justify-content: left;
+  }
+  .list .links ul li a {
+    font-size: 4vw;
+    width: unset;
+  }
+  .footer h2 {
+    color: white;
+    background-color: unset;
+  }
+  .footer h2:hover {
+    background-color: unset;
+  }
+  .menu {
+    position: absolute;
+    top: 5.5vw;
+    right: 5.5vw;
+    z-index: 10;
+    width: 9vw;
+    height: 9vw;
+    background-size: cover;
+    background-image: url(Hamburger_icon.png);
+  }
+}

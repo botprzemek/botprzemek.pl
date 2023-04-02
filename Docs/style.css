@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  color: white;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background: rgb(105, 91, 75);
+  background: linear-gradient(
+    30deg,
+    rgba(66, 46, 46, 1) 0%,
+    rgba(105, 91, 75, 1) 100%
+  );
+}
+#menu {
+  background-color: rgba(66, 46, 46, 0.2);
+}
+#menu a {
+  color: #000;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: 600;
+}
+#title {
+  width: 100%;
+  height: 30vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#caption1 {
+  font-size: 3rem;
+  font-weight: 700;
+  z-index: 10;
+}
+#background1 {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(img/1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  z-index: 1;
+  filter: brightness(70%);
+}
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+}
+.menu.el {
+  font-size: 3rem;
+  color: white;
+  z-index: 10;
+  padding: 1rem 2rem 1rem 2rem;
+}
+#menu a {
+  color: white;
+}
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+#info {
+  width: 50%;
+}
+.info-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#caption2 {
+  font-size: 3rem;
+  z-index: 10;
+  font-weight: 600;
+}
+.imgbox {
+  margin-top: 2rem;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 500px;
+}
+.avatar {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 500px;
+}
+#info-text {
+  display: grid;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+#info-text p {
+  text-align: justify;
+  line-height: 2rem;
+}
+#info-text p:first-child {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+#info-text p:last-child {
+  text-align: center;
+  padding: 1rem 0 2rem 0;
+}
+#gallery {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 20vh;
+}
+.gallerywall {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.gallerywall img {
+  width: 90%;
+  height: auto;
+  border-radius: 2rem;
+}
+.gallerywall a,
+.footerlink {
+  z-index: 10;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 3rem;
+}
+#background2 {
+  height: 20vh;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(img/3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  z-index: 1;
+  filter: brightness(70%);
+}
+footer {
+  margin-top: 15vh;
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3rem;
+}
+.footertext {
+  width: 80%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-bottom: 2vh;
+}
+.icon {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.icon img {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  #info-text {
+    font-size: 1rem;
+  }
+  .footertext {
+    width: 90%;
+    font-size: 1rem;
+  }
+  .footerlink {
+    font-size: 2rem;
+  }
+  #menu a {
+    font-size: 1rem;
+  }
+  #caption1 {
+    font-size: 2rem;
+  }
+  #title {
+    height: 20vh;
+  }
+  #caption2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  #info {
+    width: 80%;
+  }
+  .imgbox {
+    width: 15rem;
+    height: 15rem;
+  }
+  #gallery {
+    width: 84%;
+    padding: 0 8% 0 8%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+  .gallerywall {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 7vh 0 7vh 0;
+  }
+  .menu.el {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+  .icon {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+  footer {
+    margin-top: 7vh;
+    height: 10vh;
+  }
+}
